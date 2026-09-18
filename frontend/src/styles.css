@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-:root { font-family: 'Space Grotesk', sans-serif; color: #e9f2ed; background: #08100e; font-synthesis: none; --bg: #08100e; --panel: #0d1714; --line: #22302a; --muted: #75847d; --text: #e9f2ed; --text-soft: #b2c2b8; --text-muted: #87968e; --lime: #c1f264; --cyan: #54d8db; --orange: #ffad70; --violet: #c7a1ff; }
+:root { font-family: 'Space Grotesk', sans-serif; color: #edf3ff; background: #090d18; font-synthesis: none; --bg: #090d18; --panel: #111827; --line: #26334a; --muted: #8290a8; --text: #edf3ff; --text-soft: #c0cbe0; --text-muted: #8d9ab2; --lime: #78a9ff; --cyan: #57d5d1; --orange: #ffb86b; --violet: #ff7f72; }
 * { box-sizing: border-box; }
 body { margin: 0; min-width: 320px; background: var(--bg); }
 button, input { font: inherit; }
 button { cursor: pointer; }
-.app-shell { min-height: 100vh; position: relative; overflow: hidden; background: radial-gradient(circle at 78% 5%, rgba(36, 85, 61, .18), transparent 30%), linear-gradient(135deg, #08100e 0%, #0a1512 55%, #0b1211 100%); }
+.app-shell { min-height: 100vh; position: relative; overflow: hidden; background: radial-gradient(circle at 78% 5%, rgba(52, 93, 180, .2), transparent 30%), linear-gradient(135deg, #090d18 0%, #10182a 55%, #0c1220 100%); }
 .app-shell::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .16; background-image: linear-gradient(rgba(126, 172, 143, .18) 1px, transparent 1px), linear-gradient(90deg, rgba(126, 172, 143, .18) 1px, transparent 1px); background-size: 60px 60px; mask-image: linear-gradient(to bottom, black, transparent 65%); }
 .scanline { height: 2px; background: linear-gradient(90deg, transparent, var(--lime), transparent); opacity: .45; position: absolute; top: 0; width: 100%; }
 .topbar { max-width: 1380px; padding: 28px 48px; margin: auto; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(137, 169, 150, .16); position: relative; z-index: 1; }
@@ -42,5 +42,19 @@ button { cursor: pointer; }
 .app-shell[data-theme="light"] .search-box input::placeholder { color: #718174; }
 .app-shell[data-theme="light"] .error-banner { background: rgba(255, 231, 227, .85); color: #9e4036; }
 .app-shell[data-theme="light"] .error-banner button { color: #7d2e28; }
+
+.app-shell[data-theme="dark"] { --bg: #090d18; --panel: #111827; --line: #26334a; --text: #edf3ff; --text-soft: #c0cbe0; --text-muted: #8d9ab2; --lime: #78a9ff; --cyan: #57d5d1; --orange: #ffb86b; --violet: #ff7f72; }
+.app-shell[data-theme="dark"]::before { background-image: linear-gradient(rgba(105, 139, 207, .16) 1px, transparent 1px), linear-gradient(90deg, rgba(105, 139, 207, .16) 1px, transparent 1px); }
+.app-shell[data-theme="dark"] .topbar { border-color: rgba(126, 157, 219, .2); }
+.app-shell[data-theme="dark"] .hero-status { background: rgba(17, 24, 39, .78); }
+.app-shell[data-theme="dark"] .stat-card { background: linear-gradient(145deg, rgba(23, 35, 58, .94), rgba(14, 21, 37, .82)); }
+.app-shell[data-theme="dark"] .panel { background: rgba(17, 24, 39, .9); }
+.app-shell[data-theme="dark"] .content-tabs button span { background: #1b315b; }
+
+.app-shell[data-theme="light"] { --bg: #f5f7fb; --panel: #ffffff; --line: #d5deec; --text: #152238; --text-soft: #43536d; --text-muted: #64748b; --lime: #245fcb; --cyan: #087f83; --orange: #c86b16; --violet: #c64b43; background: radial-gradient(circle at 78% 5%, rgba(64, 112, 207, .13), transparent 30%), linear-gradient(135deg, #f5f7fb 0%, #e9eff8 55%, #f8fafc 100%); }
+.app-shell[data-theme="light"]::before { background-image: linear-gradient(rgba(53, 88, 142, .13) 1px, transparent 1px), linear-gradient(90deg, rgba(53, 88, 142, .13) 1px, transparent 1px); }
+.app-shell[data-theme="light"] .content-tabs button span { background: #e2ebfb; }
+.app-shell[data-theme="light"] .stat-card { background: linear-gradient(145deg, rgba(255, 255, 255, .94), rgba(235, 241, 250, .9)); }
+.app-shell[data-theme="light"] .panel { background: rgba(255, 255, 255, .84); }
 
 @media (max-width: 620px) { .theme-toggle span { display: none; }.theme-toggle { padding: 8px; } }
